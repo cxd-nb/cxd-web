@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>CXD · 个人网页</title>
+	<meta name="description" content="CXD 的个人主页，记录设计、代码与生活。">
+	<style>
+		:root{--ink:#1f2937;--muted:#718096;--accent:#e76f51;--cream:#fffaf5;--line:#eee5dc}
+		*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);background:var(--cream);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;line-height:1.7}
+		a{color:inherit;text-decoration:none}.wrap{width:min(1080px,calc(100% - 40px));margin:auto}
+		nav{height:78px;display:flex;align-items:center;justify-content:space-between}.logo{font-size:22px;font-weight:800;letter-spacing:.08em}.logo span{color:var(--accent)}.links{display:flex;gap:28px;color:var(--muted);font-size:14px}.links a:hover{color:var(--accent)}
+		.hero{min-height:calc(100vh - 78px);display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:60px;padding:55px 0 90px}.eyebrow{color:var(--accent);font-size:14px;font-weight:700;letter-spacing:.14em}.hero h1{font-size:clamp(42px,7vw,78px);line-height:1.12;margin:18px 0 22px;letter-spacing:-.04em}.hero h1 em{font-style:normal;color:var(--accent)}.intro{max-width:520px;color:var(--muted);font-size:17px}.buttons{display:flex;gap:14px;margin-top:32px;flex-wrap:wrap}.button{padding:11px 22px;border-radius:99px;background:var(--ink);color:white;font-size:14px}.button.alt{background:transparent;color:var(--ink);border:1px solid #d8cec5}.button:hover{transform:translateY(-2px);transition:.2s;background:var(--accent);border-color:var(--accent)}
+		.portrait{position:relative;width:min(360px,80vw);height:390px;margin:auto;background:#f4d6c8;border-radius:48% 48% 20px 20px;display:flex;align-items:flex-end;justify-content:center;overflow:hidden}.portrait:before{content:"";position:absolute;width:220px;height:220px;top:44px;border-radius:50%;background:#f0b89f}.portrait:after{content:"CXD";position:absolute;bottom:38px;font-size:72px;font-weight:800;color:rgba(255,255,255,.5);letter-spacing:.08em}.shape{position:absolute;width:270px;height:190px;bottom:-45px;border-radius:50% 50% 0 0;background:var(--ink)}
+		section{padding:95px 0;border-top:1px solid var(--line)}.section-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:35px}.section-head h2{font-size:32px;margin:0}.section-head p{color:var(--muted);margin:0}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{padding:28px;background:white;border:1px solid var(--line);border-radius:16px}.icon{font-size:25px}.card h3{margin:18px 0 8px}.card p{color:var(--muted);font-size:14px;margin:0}.about{display:grid;grid-template-columns:1fr 1fr;gap:70px}.about p{color:var(--muted)}.facts{display:grid;grid-template-columns:1fr 1fr;gap:14px}.fact{padding:18px;background:#f5eee7;border-radius:12px}.fact strong{display:block;font-size:24px}.fact span{color:var(--muted);font-size:13px}
+		.contact{background:var(--ink);color:white;border-radius:22px;padding:55px;text-align:center}.contact h2{font-size:36px;margin:0 0 10px}.contact p{color:#cbd5e1}.contact .button{display:inline-block;background:var(--accent);margin-top:14px}footer{padding:28px 0;color:var(--muted);font-size:13px;display:flex;justify-content:space-between}
+		@media(max-width:720px){.links{gap:12px}.links a:not(:last-child){display:none}.hero,.about{grid-template-columns:1fr;gap:45px}.hero{padding-top:35px}.portrait{height:320px}.cards{grid-template-columns:1fr}.section-head{display:block}.section-head p{margin-top:8px}.contact{padding:38px 20px}.contact h2{font-size:29px}footer{display:block;text-align:center}footer span{display:block;margin-top:8px}}
+	</style>
+</head>
+<body>
+	<header class="wrap">
+		<nav><a class="logo" href="#top">C<span>.</span>XD</a><div class="links"><a href="#about">关于我</a><a href="#work">正在做</a><a href="#contact">联系我</a></div></nav>
+	</header>
+	<main id="top">
+		<div class="wrap hero">
+			<div><div class="eyebrow">你好，我是 CXD</div><h1>用设计与代码，<br><em>创造有趣的事。</em></h1><p class="intro">一名保持好奇的创作者，喜欢把想法变成简洁、好用又有温度的产品。这里是我的个人空间。</p><div class="buttons"><a class="button" href="#work">看看我的工作 ↓</a><a class="button alt" href="#contact">和我聊聊</a></div></div>
+			<div class="portrait"><div class="shape"></div></div>
+		</div>
+		<section id="about"><div class="wrap about"><div><div class="eyebrow">ABOUT ME</div><h2>持续学习，<br>认真生活。</h2><p>我相信好的作品不需要复杂的解释。日常在用户体验、视觉设计和前端开发之间探索，也享受阅读、摄影与城市漫步带来的灵感。</p></div><div class="facts"><div class="fact"><strong>3+</strong><span>年设计与开发经验</span></div><div class="fact"><strong>20+</strong><span>参与过的项目</span></div><div class="fact"><strong>∞</strong><span>对新事物的好奇心</span></div><div class="fact"><strong>☕</strong><span>每天都需要咖啡</span></div></div></div></section>
+		<section id="work"><div class="wrap"><div class="section-head"><h2>我正在做什么</h2><p>把热爱变成日常</p></div><div class="cards"><article class="card"><div class="icon">✦</div><h3>产品设计</h3><p>从用户需求出发，构建清晰、友好的数字产品体验。</p></article><article class="card"><div class="icon">◌</div><h3>前端开发</h3><p>使用现代技术，将漂亮的设计还原成流畅的网页。</p></article><article class="card"><div class="icon">↗</div><h3>独立创作</h3><p>记录灵感和思考，偶尔做一些有趣的小实验。</p></article></div></div></section>
+		<section id="contact"><div class="wrap"><div class="contact"><div class="eyebrow">LET'S CONNECT</div><h2>有想法？一起聊聊。</h2><p>无论是项目合作，还是分享一篇好文章，都欢迎联系我。</p><a class="button" href="mailto:hello@example.com">hello@example.com ↗</a></div></div></section>
+	</main>
+	<footer class="wrap"><span>© 2024 CXD</span><span>用心做事，保持热爱。</span></footer>
+</body>
+</html>
