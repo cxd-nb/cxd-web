@@ -1,35 +1,140 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>CXD · 个人网页</title>
-	<meta name="description" content="CXD 的个人主页，记录设计、代码与生活。">
-	<style>
-		:root{--ink:#1f2937;--muted:#718096;--accent:#e76f51;--cream:#fffaf5;--line:#eee5dc}
-		*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);background:var(--cream);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;line-height:1.7}
-		a{color:inherit;text-decoration:none}.wrap{width:min(1080px,calc(100% - 40px));margin:auto}
-		nav{height:78px;display:flex;align-items:center;justify-content:space-between}.logo{font-size:22px;font-weight:800;letter-spacing:.08em}.logo span{color:var(--accent)}.links{display:flex;gap:28px;color:var(--muted);font-size:14px}.links a:hover{color:var(--accent)}
-		.hero{min-height:calc(100vh - 78px);display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:60px;padding:55px 0 90px}.eyebrow{color:var(--accent);font-size:14px;font-weight:700;letter-spacing:.14em}.hero h1{font-size:clamp(42px,7vw,78px);line-height:1.12;margin:18px 0 22px;letter-spacing:-.04em}.hero h1 em{font-style:normal;color:var(--accent)}.intro{max-width:520px;color:var(--muted);font-size:17px}.buttons{display:flex;gap:14px;margin-top:32px;flex-wrap:wrap}.button{padding:11px 22px;border-radius:99px;background:var(--ink);color:white;font-size:14px}.button.alt{background:transparent;color:var(--ink);border:1px solid #d8cec5}.button:hover{transform:translateY(-2px);transition:.2s;background:var(--accent);border-color:var(--accent)}
-		.portrait{position:relative;width:min(360px,80vw);height:390px;margin:auto;background:#f4d6c8;border-radius:48% 48% 20px 20px;display:flex;align-items:flex-end;justify-content:center;overflow:hidden}.portrait:before{content:"";position:absolute;width:220px;height:220px;top:44px;border-radius:50%;background:#f0b89f}.portrait:after{content:"CXD";position:absolute;bottom:38px;font-size:72px;font-weight:800;color:rgba(255,255,255,.5);letter-spacing:.08em}.shape{position:absolute;width:270px;height:190px;bottom:-45px;border-radius:50% 50% 0 0;background:var(--ink)}
-		section{padding:95px 0;border-top:1px solid var(--line)}.section-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:35px}.section-head h2{font-size:32px;margin:0}.section-head p{color:var(--muted);margin:0}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{padding:28px;background:white;border:1px solid var(--line);border-radius:16px}.icon{font-size:25px}.card h3{margin:18px 0 8px}.card p{color:var(--muted);font-size:14px;margin:0}.about{display:grid;grid-template-columns:1fr 1fr;gap:70px}.about p{color:var(--muted)}.facts{display:grid;grid-template-columns:1fr 1fr;gap:14px}.fact{padding:18px;background:#f5eee7;border-radius:12px}.fact strong{display:block;font-size:24px}.fact span{color:var(--muted);font-size:13px}
-		.contact{background:var(--ink);color:white;border-radius:22px;padding:55px;text-align:center}.contact h2{font-size:36px;margin:0 0 10px}.contact p{color:#cbd5e1}.contact .button{display:inline-block;background:var(--accent);margin-top:14px}footer{padding:28px 0;color:var(--muted);font-size:13px;display:flex;justify-content:space-between}
-		@media(max-width:720px){.links{gap:12px}.links a:not(:last-child){display:none}.hero,.about{grid-template-columns:1fr;gap:45px}.hero{padding-top:35px}.portrait{height:320px}.cards{grid-template-columns:1fr}.section-head{display:block}.section-head p{margin-top:8px}.contact{padding:38px 20px}.contact h2{font-size:29px}footer{display:block;text-align:center}footer span{display:block;margin-top:8px}}
-	</style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CXD · 首页</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet" />
 </head>
 <body>
-	<header class="wrap">
-		<nav><a class="logo" href="#top">C<span>.</span>XD</a><div class="links"><a href="#about">关于我</a><a href="#work">正在做</a><a href="#contact">联系我</a></div></nav>
-	</header>
-	<main id="top">
-		<div class="wrap hero">
-			<div><div class="eyebrow">你好，我是 CXD</div><h1>用设计与代码，<br><em>创造有趣的事。</em></h1><p class="intro">一名保持好奇的创作者，喜欢把想法变成简洁、好用又有温度的产品。这里是我的个人空间。</p><div class="buttons"><a class="button" href="#work">看看我的工作 ↓</a><a class="button alt" href="#contact">和我聊聊</a></div></div>
-			<div class="portrait"><div class="shape"></div></div>
-		</div>
-		<section id="about"><div class="wrap about"><div><div class="eyebrow">ABOUT ME</div><h2>持续学习，<br>认真生活。</h2><p>我相信好的作品不需要复杂的解释。日常在用户体验、视觉设计和前端开发之间探索，也享受阅读、摄影与城市漫步带来的灵感。</p></div><div class="facts"><div class="fact"><strong>3+</strong><span>年设计与开发经验</span></div><div class="fact"><strong>20+</strong><span>参与过的项目</span></div><div class="fact"><strong>∞</strong><span>对新事物的好奇心</span></div><div class="fact"><strong>☕</strong><span>每天都需要咖啡</span></div></div></div></section>
-		<section id="work"><div class="wrap"><div class="section-head"><h2>我正在做什么</h2><p>把热爱变成日常</p></div><div class="cards"><article class="card"><div class="icon">✦</div><h3>产品设计</h3><p>从用户需求出发，构建清晰、友好的数字产品体验。</p></article><article class="card"><div class="icon">◌</div><h3>前端开发</h3><p>使用现代技术，将漂亮的设计还原成流畅的网页。</p></article><article class="card"><div class="icon">↗</div><h3>独立创作</h3><p>记录灵感和思考，偶尔做一些有趣的小实验。</p></article></div></div></section>
-		<section id="contact"><div class="wrap"><div class="contact"><div class="eyebrow">LET'S CONNECT</div><h2>有想法？一起聊聊。</h2><p>无论是项目合作，还是分享一篇好文章，都欢迎联系我。</p><a class="button" href="mailto:hello@example.com">hello@example.com ↗</a></div></div></section>
-	</main>
-	<footer class="wrap"><span>© 2024 CXD</span><span>用心做事，保持热爱。</span></footer>
+
+    <!-- 弹窗 -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-box">
+            <div class="modal-icon"><i class="fas fa-code"></i></div>
+            <h2>网页正在开发中</h2>
+            <p>内容仅供参考，更多精彩即将上线！</p>
+            <button class="btn btn-primary" id="modalCloseBtn">我知道了</button>
+        </div>
+    </div>
+
+    <!-- 导航栏 -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">C<span>XD</span></a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="active">首页</a></li>
+                <li><a href="sports.html">运动</a></li>
+                <li><a href="projects.html">记录</a></li>
+                <li><a href="honors.html">荣誉</a></li>
+                <li><a href="ppt.html">PPT</a></li>
+                <li><a href="contact.html" class="nav-cta">联系我</a></li>
+            </ul>
+            <button class="theme-toggle" id="themeToggle" aria-label="切换主题"><i class="fas fa-moon"></i></button>
+            <button class="menu-toggle" id="menuToggle" aria-label="菜单">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>你好，我是 <span class="highlight">CXD</span></h1>
+                <p class="tagline">大一新生 · 运动达人 · 生活记录者</p>
+                <div class="hero-badges">
+                    <span class="badge"><i class="fas fa-bicycle"></i> 骑行</span>
+                    <span class="badge"><i class="fas fa-running"></i> 跑步</span>
+                    <span class="badge"><i class="fas fa-table-tennis"></i> 羽毛球</span>
+                    <span class="badge"><i class="fas fa-fist-raised"></i> 跆拳道</span>
+                </div>
+                <div class="hero-actions">
+                    <a href="projects.html" class="btn btn-primary"><i class="fas fa-camera"></i> 看看我的生活</a>
+                    <a href="contact.html" class="btn btn-outline"><i class="fas fa-envelope"></i> 联系我</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="avatar-wrapper">
+                    <div class="avatar">
+                       <div class="avatar">
+    					<img src="assets/avatar.png" alt="CXD头像" />
+                    </div>
+                    <div class="floating-icon"><i class="fas fa-bicycle"></i></div>
+                    <div class="floating-icon"><i class="fas fa-running"></i></div>
+                    <div class="floating-icon"><i class="fas fa-table-tennis"></i></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 关于我 -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-text">
+                <h2>关于 <span style="color:var(--primary);">我</span></h2>
+                <p>我是 CXD（褚旭东），一名充满活力的计算机工程学院 2026 级新生。从高中起，我就热爱运动与挑战，曾担任 <strong>体育委员</strong> 和 <strong>生物社社长</strong>。</p>
+                <p>我喜欢用镜头记录生活中的每一个精彩瞬间——无论是骑行路上的风景、跑道上的汗水，还是与朋友们一起打羽毛球、练习跆拳道的时光。</p>
+                <p>高中期间，我参与多项校内外活动并获得荣誉，包括高空护蛋比赛、生物社义卖活动等。欢迎通过 B站 和抖音关注我，一起见证我的成长与热爱。</p>
+                <div class="about-stats">
+                    <div class="stat"><div class="number">4+</div><div class="label">运动项目</div></div>
+                    <div class="stat"><div class="number">6+</div><div class="label">荣誉奖项</div></div>
+                    <div class="stat"><div class="number">∞</div><div class="label">热爱不止</div></div>
+                </div>
+            </div>
+            <div style="display:flex;justify-content:center;align-items:center;font-size:8rem;color:var(--primary-light);opacity:0.3;user-select:none;">
+                <i class="fas fa-camera-retro"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- 快速导航 -->
+    <section class="skills">
+        <div class="container">
+            <h2 class="section-title">探索我的 <span class="highlight">世界</span></h2>
+            <p class="section-subtitle">点击卡片，了解更多关于我的故事。</p>
+            <div class="skills-grid">
+                <a href="sports.html" class="skill-card">
+                    <div class="icon"><i class="fas fa-bicycle"></i></div>
+                    <h4>运动版图</h4>
+                    <p>骑行、跑步、羽毛球、跆拳道</p>
+                </a>
+                <a href="projects.html" class="skill-card">
+                    <div class="icon"><i class="fas fa-video"></i></div>
+                    <h4>记录生活</h4>
+                    <p>B站 & 抖音内容分享</p>
+                </a>
+                <a href="honors.html" class="skill-card">
+                    <div class="icon"><i class="fas fa-trophy"></i></div>
+                    <h4>荣誉墙</h4>
+                    <p>比赛获奖与活动经历</p>
+                </a>
+                <a href="ppt.html" class="skill-card">
+                    <div class="icon"><i class="fas fa-file-powerpoint"></i></div>
+                    <h4>自我介绍PPT</h4>
+                    <p>滑动浏览我的故事</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <a href="index.html" class="logo">C<span>XD</span></a>
+            <p>&copy; 2026 CXD · 用 <i class="fas fa-heart" style="color:#66ccff;"></i> 记录生活</p>
+            <div class="footer-links">
+                <a href="index.html">首页</a>
+                <a href="sports.html">运动</a>
+                <a href="projects.html">记录</a>
+                <a href="honors.html">荣誉</a>
+                <a href="contact.html">联系</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
