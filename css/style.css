@@ -205,6 +205,7 @@ body.dark .avatar-wrapper .avatar { background: #1a2332; color: var(--primary-li
     display: flex; align-items: center; justify-content: center;
     font-size: 3rem; color: var(--primary);
 }
+
 .project-cover.cover-2 { background: linear-gradient(135deg, #ffe4e4, #ffcece); color: #e06060; }
 .project-cover.cover-3 { background: linear-gradient(135deg, #e4ffe8, #ceffd8); color: #40b060; }
 .project-body { padding: 24px 28px 28px; }
