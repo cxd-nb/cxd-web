@@ -12,11 +12,25 @@
     --shadow: 0 12px 40px rgba(102, 204, 255, 0.12);
     --radius: 20px;
     --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --primary: #66ccff;
+    --primary-dark: #3ab8f5;
+    --primary-light: #99ddff;
+    --primary-bg: #eaf7ff;              
+    --primary-glow: rgba(102, 204, 255, 0.25);
+    --bg: #f5faff;
+    --card-bg: #ffffff;
+    --text: #1a1a2e;
+    --text-light: #5a5a7a;
+    --border: #dceef8;
+    --shadow: 0 12px 40px rgba(102, 204, 255, 0.12);
+    --radius: 20px;
+    --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body.dark {
     --bg: #0d1117;
     --card-bg: #161b22;
+    --primary-bg: #1a2a3a;              
     --text: #e6edf3;
     --text-light: #8b949e;
     --border: #21262d;
@@ -177,6 +191,79 @@ body.dark .avatar-wrapper .avatar { background: #1a2332; color: var(--primary-li
 .stat .number { font-size: 1.8rem; font-weight: 700; color: var(--primary); }
 .stat .label { font-size: 0.85rem; color: var(--text-light); }
 
+/* ===== 关于我 - 图片区 ===== */
+.about-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-image-link {
+    display: block;
+    position: relative;
+    width: 100%;
+    max-width: 480px;
+    aspect-ratio: 4 / 3;              
+    border-radius: var(--radius);     
+    overflow: hidden;
+    box-shadow: var(--shadow);         
+    border: 1px solid var(--border);   
+    transition: var(--transition);
+    background: #eaf7ff;
+}
+
+.about-image-link img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 悬停效果：上浮 + 发主题色光 */
+.about-image-link:hover {
+    transform: translateY(-6px);
+    border-color: var(--primary-light);
+    box-shadow: 0 20px 60px rgba(102, 204, 255, 0.30);
+}
+
+.about-image-link:hover img {
+    transform: scale(1.06);
+}
+
+/* 悬停时出现"查看我的荣誉"提示 */
+.about-image-link::after {
+    content: "查看我的荣誉 →";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 16px 12px 12px;
+    background: linear-gradient(transparent, rgba(102, 204, 255, 0.92));
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(16px);
+    transition: var(--transition);
+    pointer-events: none;
+    letter-spacing: 0.5px;
+}
+
+.about-image-link:hover::after {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 响应式 */
+@media (max-width: 900px) {
+    .about-image-link {
+        max-width: 100%;
+        aspect-ratio: 16 / 10;
+        margin-top: 24px;
+    }
+}
 /* ===== 技能卡片 ===== */
 .skills { padding: 80px 0; }
 .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; }
@@ -192,7 +279,7 @@ body.dark .avatar-wrapper .avatar { background: #1a2332; color: var(--primary-li
 .skill-card h4 { font-weight: 600; margin-bottom: 4px; }
 .skill-card p { font-size: 0.9rem; color: var(--text-light); }
 
-/* ===== 项目/记录卡片 ===== */
+/* ===== 项目卡片 ===== */
 .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
 .project-card {
     background: var(--card-bg); border-radius: var(--radius); overflow: hidden;
@@ -223,28 +310,104 @@ body.dark .avatar-wrapper .avatar { background: #1a2332; color: var(--primary-li
 .project-link:hover { gap: 12px; color: var(--primary-dark); }
 
 /* ===== 荣誉墙 ===== */
-.honors-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 28px; }
+.honors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 28px;
+}
 .honor-card {
-    background: var(--card-bg); border-radius: var(--radius); overflow: hidden;
-    border: 1px solid var(--border); transition: var(--transition);
-    box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--border);
+    transition: var(--transition);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
 }
-.honor-card:hover { transform: translateY(-6px); box-shadow: var(--shadow); border-color: var(--primary-light); }
+.honor-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--primary-light);
+    box-shadow: 0 20px 60px rgba(102, 204, 255, 0.30);  
+}
 .honor-img {
-    width: 100%; height: 200px; object-fit: cover; background: #eaf7ff;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 3rem; color: var(--primary);
+    width: 100%;
+    height: 200px;
+    background: #eaf7ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: var(--primary);
+    overflow: hidden;
 }
-.honor-img img { width: 100%; height: 100%; object-fit: cover; }
+.honor-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
 .honor-body { padding: 20px 24px 24px; }
 .honor-badge {
-    display: inline-block; background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-    color: #fff; font-size: 0.75rem; font-weight: 700; padding: 4px 14px;
-    border-radius: 40px; margin-bottom: 10px;
+    display: inline-block;
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 4px 14px;
+    border-radius: 40px;
+    margin-bottom: 10px;
 }
 .honor-body h4 { font-size: 1.05rem; font-weight: 600; margin-bottom: 6px; }
 .honor-body p { font-size: 0.9rem; color: var(--text-light); }
 .honor-date { font-size: 0.8rem; color: var(--primary); font-weight: 500; margin-top: 8px; }
+
+/* ===== 证书展示 ===== */
+.certs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 32px;
+}
+.cert-card {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--border);
+    transition: var(--transition);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+}
+.cert-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow);
+    border-color: var(--primary-light);
+}
+.cert-img {
+    width: 100%;
+    height: 330px;
+    background: #eaf7ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: var(--primary);
+    overflow: hidden;
+}
+.cert-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;    
+}
+.cert-body { padding: 20px 24px 24px; }
+.cert-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 4px 14px;
+    border-radius: 40px;
+    margin-bottom: 10px;
+}
+.cert-body h4 { font-size: 1.05rem; font-weight: 600; margin-bottom: 6px; }
+.cert-body p { font-size: 0.9rem; color: var(--text-light); }
+.cert-date { font-size: 0.8rem; color: var(--primary); font-weight: 500; margin-top: 8px; }
 
 /* ===== 技能树 ===== */
 .skills-tree {
@@ -331,21 +494,6 @@ body.dark .avatar-wrapper .avatar { background: #1a2332; color: var(--primary-li
     margin-bottom: 16px;
 }
 
-/* 技能进度条 */
-.skill-bar {
-    height: 6px;
-    background: var(--bg);
-    border-radius: 40px;
-    overflow: hidden;
-    margin-top: auto;
-}
-.skill-bar span {
-    display: block;
-    height: 100%;
-    border-radius: 40px;
-    background: linear-gradient(90deg, var(--primary-light), var(--primary));
-    transition: width 1s ease;
-}
 
 /* 响应式 */
 @media (max-width: 768px) {
