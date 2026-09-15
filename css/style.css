@@ -264,6 +264,85 @@ body.dark .avatar-wrapper .avatar { background: #1a2332; color: var(--primary-li
         margin-top: 24px;
     }
 }
+/* ===== 视频容器：响应式 16:9 ===== */
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;   /* 16:9 宽高比 */
+    height: 0;
+    overflow: hidden;
+    border-radius: 14px;
+    background: #000;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    transition: var(--transition);
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* 精选视频：限制最大宽度 + 居中 + 更大阴影 */
+.video-container--featured {
+    max-width: 900px;
+    margin: 0 auto;
+    border-radius: var(--radius);
+    box-shadow: 0 20px 60px rgba(102, 204, 255, 0.20);
+}
+
+/* ===== 视频卡片专属样式 ===== */
+.project-card--video {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    transition: var(--transition);
+}
+
+.project-card--video:hover {
+    transform: translateY(-6px);
+    border-color: var(--primary-light);
+    box-shadow: 0 20px 60px rgba(102, 204, 255, 0.30);
+}
+
+/* 标题图标 */
+.project-card--video .project-body h3 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.15rem;
+}
+
+.project-card--video .project-body h3 i {
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+    background: var(--primary-bg);
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.95rem;
+    flex-shrink: 0;
+}
+
+/* 视频卡片内边距收紧一点，让视频更大 */
+.project-card--video .project-body {
+    padding: 20px 20px 24px;
+}
+
+/* 视频卡片 hover 时视频框发光 */
+.project-card--video:hover .video-container {
+    box-shadow: 0 8px 28px rgba(102, 204, 255, 0.35);
+}
+/* 桌面端强制两列（视频区专用） */
+@media (min-width: 500px) {
+    .projects-grid--2col {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
 /* ===== 技能卡片 ===== */
 .skills { padding: 80px 0; }
 .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; }
