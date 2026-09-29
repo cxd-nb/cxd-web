@@ -118,10 +118,4 @@ cxd-web/
 
 本项目采用 MIT 许可证 - 查看 [LICENSE](LICENSE) 文件了解详情
 
-## 🤝 贡献
-
-欢迎提交 Issue 和 Pull Request 来改进这个项目！
-
----
-
 ⭐ 如果这个项目对你有帮助，请给个星标！
