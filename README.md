@@ -52,22 +52,6 @@ cxd-web/
 └── README.md           # 项目说明
 ```
 
-## 🚀 快速开始
-
-1. 克隆项目到本地：
-
-   ```bash
-   git clone https://github.com/your-username/cxd-web.git
-   ```
-
-2. 进入项目目录：
-
-   ```bash
-   cd cxd-web
-   ```
-
-3. 在浏览器中打开 `index.html` 文件即可查看网站
-
 ## 🎯 功能特性
 
 ### 导航系统
