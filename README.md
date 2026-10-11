@@ -109,7 +109,6 @@ body.dark {
 ## 📮 联系方式
 
 - **B站**：[CXD-NB](https://space.bilibili.com/1492000998)
-- **抖音**：CXD-NB
 - **GitHub**：[CXD-NB](https://github.com/CXD-NB)
 
 ## 📄 许可证
